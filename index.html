@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brunelle — Wig Care Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#3E5658;
+    --teal:#4E6A6C;
+    --teal-soft:#6C8A8C;
+    --teal-mist:#EDF2F1;
+    --cream:#FAF7F0;
+    --gold:#C9A24E;
+    --gold-soft:#E4D3A0;
+    --ink:#241F1A;
+    --ink-soft:#5B5852;
+    --line: rgba(36,31,26,0.12);
+    --max: 1140px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Jost', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:absolute; top:0; left:0; right:0;
+    z-index:10;
+    padding:28px 0;
+  }
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .nav-word{
+    font-family:'Cormorant Garamond', serif;
+    font-size:24px;
+    letter-spacing:0.03em;
+    color:var(--cream);
+  }
+  .nav-tag{
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:var(--gold-soft);
+    font-style:italic;
+    font-family:'Cormorant Garamond', serif;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:var(--teal-deep);
+  }
+  .hero img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position: 50% 22%;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(30,40,40,0.05) 0%, rgba(20,28,29,0.15) 45%, rgba(15,22,23,0.86) 100%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    color:var(--cream);
+    padding: 0 0 72px;
+    max-width:640px;
+  }
+  .hero-kicker{
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(42px, 7vw, 74px);
+    line-height:1.03;
+    color:#fff;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-soft);
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:17px;
+    color:rgba(255,255,255,0.82);
+    max-width:440px;
+  }
+  .scroll-cue{
+    position:absolute;
+    right:32px; bottom:36px;
+    z-index:2;
+    color:rgba(255,255,255,0.6);
+    font-size:12px;
+    letter-spacing:0.12em;
+    writing-mode:vertical-rl;
+  }
+  .scroll-cue::after{
+    content:"";
+    display:block;
+    width:1px; height:52px;
+    background:rgba(255,255,255,0.4);
+    margin:10px auto 0;
+  }
+
+  /* ---------- Section shells ---------- */
+  section{padding:120px 0;}
+  .section-cream{background:var(--cream);}
+  .section-mist{background:var(--teal-mist);}
+  .section-dark{background:var(--teal-deep); color:var(--cream);}
+
+  .eyebrow{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--teal);
+    margin-bottom:10px;
+  }
+  .section-dark .eyebrow{color:var(--gold-soft);}
+  h2.title{
+    font-size:clamp(30px, 4vw, 44px);
+    max-width:620px;
+  }
+
+  /* ---------- Welcome ---------- */
+  .welcome{
+    text-align:center;
+    max-width:660px;
+    margin:0 auto;
+  }
+  .welcome .eyebrow{margin-bottom:14px;}
+  .welcome p{
+    margin-top:26px;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+  .rule{
+    width:64px; height:1px;
+    background:var(--gold);
+    margin:34px auto 0;
+  }
+
+  /* ---------- Split layouts ---------- */
+  .split{
+    display:grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap:64px;
+    align-items:center;
+  }
+  .split.reverse .split-media{order:2;}
+  .split.reverse .split-text{order:1;}
+  .split-media img{
+    border-radius:2px;
+  }
+  .split-media{
+    position:relative;
+  }
+  .split-media .frame-tag{
+    position:absolute;
+    left:18px; bottom:18px;
+    background:rgba(250,247,240,0.92);
+    color:var(--ink);
+    padding:9px 16px;
+    font-size:13px;
+    letter-spacing:0.02em;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+  }
+
+  /* Kit checklist */
+  .kit-list{list-style:none; margin:32px 0 0; padding:0;}
+  .kit-list li{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+    font-size:16px;
+  }
+  .kit-list li:first-child{padding-top:0;}
+  .kit-mark{
+    color:var(--gold);
+    font-family:'Cormorant Garamond', serif;
+    font-size:20px;
+    font-style:italic;
+    flex-shrink:0;
+    width:20px;
+  }
+  .kit-list b{font-weight:500;}
+
+  /* Steps */
+  .steps{margin-top:36px;}
+  .step{
+    display:flex;
+    gap:22px;
+    padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:1px solid var(--line);}
+  .step-num{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px;
+    font-style:italic;
+    color:var(--gold);
+    width:38px;
+    flex-shrink:0;
+    line-height:1.3;
+  }
+  .step-body h3{
+    font-size:20px;
+    margin-bottom:6px;
+    font-weight:500;
+  }
+  .step-body p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+  }
+  .section-note{
+    margin-top:18px;
+    color:var(--ink-soft);
+    font-size:15px;
+    max-width:500px;
+  }
+
+  /* Do / Don't */
+  .rules-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    margin-top:56px;
+  }
+  .rules-col h3{
+    font-size:22px;
+    color:var(--gold-soft);
+    margin-bottom:22px;
+    font-weight:500;
+  }
+  .rules-col ul{list-style:none; margin:0; padding:0;}
+  .rules-col li{
+    padding:14px 0;
+    border-top:1px solid rgba(250,247,240,0.16);
+    font-size:16px;
+    color:rgba(250,247,240,0.88);
+  }
+  .rules-col li:last-child{border-bottom:1px solid rgba(250,247,240,0.16);}
+
+  /* Storage callout */
+  .callout{
+    margin-top:80px;
+    padding:44px 48px;
+    background:var(--cream);
+    color:var(--ink);
+    border-left:3px solid var(--gold);
+    max-width:720px;
+  }
+  .callout .eyebrow{margin-bottom:10px;}
+  .callout p{font-size:16.5px; color:var(--ink-soft);}
+
+  /* ---------- Closing banner ---------- */
+  .closing{
+    position:relative;
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    object-position:50% 30%;
+  }
+  .closing::after{
+    content:"";
+    position:absolute; inset:0;
+    background:rgba(19,27,28,0.6);
+  }
+  .closing-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:620px;
+    padding:0 32px;
+  }
+  .closing h2{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.25;
+    color:#fff;
+  }
+  .closing p{
+    margin-top:22px;
+    color:rgba(255,255,255,0.8);
+    font-size:16px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--teal-deep);
+    color:rgba(250,247,240,0.7);
+    padding:56px 0 40px;
+    text-align:center;
+  }
+  footer .foot-word{
+    font-family:'Cormorant Garamond', serif;
+    font-size:26px;
+    color:var(--cream);
+  }
+  footer .foot-tag{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold-soft);
+    font-size:14px;
+    margin-top:6px;
+  }
+  footer .foot-copy{
+    margin-top:26px;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:rgba(250,247,240,0.4);
+  }
+
+  @media (max-width: 860px){
+    section{padding:80px 0;}
+    .split, .rules-grid{grid-template-columns:1fr; gap:36px;}
+    .split.reverse .split-media, .split.reverse .split-text{order:initial;}
+    .wrap{padding:0 22px;}
+    .hero-content{padding-bottom:56px;}
+    .scroll-cue{display:none;}
+    .callout{padding:32px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <span class="nav-word">Brunelle</span>
+    <span class="nav-tag">Made To Be Admired</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <img src="images/model-copper-wave.jpeg" alt="Brunelle copper wave lace wig">
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-kicker">The Essential Guide</div>
+      <h1>Wig Care,<br><em>the Brunelle way</em></h1>
+      <p class="hero-sub">Your piece is 100% premium hair. It responds to care the same way your own hair would. Treat it gently, and it stays soft, natural and long-lasting for months to come.</p>
+    </div>
+  </div>
+  <div class="scroll-cue">SCROLL</div>
+</header>
+
+<!-- WELCOME -->
+<section class="section-cream">
+  <div class="wrap">
+    <div class="welcome">
+      <div class="eyebrow">Welcome</div>
+      <h2 class="title" style="margin:0 auto;">Keep it soft. Keep it healthy. Keep it yours.</h2>
+      <p>Thank you for choosing Brunelle. This guide walks you through everything we do behind the scenes to keep a piece looking salon-fresh — from your very first wash to the way you store it at night.</p>
+      <div class="rule"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU NEED -->
+<section class="section-mist">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text">
+        <div class="eyebrow">Before You Start</div>
+        <h2 class="title">What you'll need</h2>
+        <p class="section-note">A few basics — most of which you already own — are all it takes to keep your Brunelle looking its best.</p>
+        <ul class="kit-list">
+          <li><span class="kit-mark">—</span><span><b>Sulfate-free shampoo</b> &amp; conditioner</span></li>
+          <li><span class="kit-mark">—</span><span><b>Wide-tooth comb</b> or wig brush</span></li>
+          <li><span class="kit-mark">—</span><span><b>Wig stand</b> for drying and storage</span></li>
+          <li><span class="kit-mark">—</span><span><b>Silk or satin bonnet</b>, or a silk pillowcase</span></li>
+          <li><span class="kit-mark">—</span><span><b>Leave-in conditioner</b> or a light hair serum</span></li>
+          <li><span class="kit-mark">—</span><span><b>Heat protectant</b> spray, for styling days</span></li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <img src="images/model-honey-straight.jpeg" alt="Brunelle honey blonde straight lace wig">
+        <div class="frame-tag">Honey Blonde — Silky Straight</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WASHING -->
+<section class="section-cream">
+  <div class="wrap">
+    <div class="split reverse">
+      <div class="split-media">
+        <img src="images/model-golden-highlight.jpeg" alt="Brunelle golden highlight straight lace wig">
+        <div class="frame-tag">Golden Highlight — Silky Straight</div>
+      </div>
+      <div class="split-text">
+        <div class="eyebrow">Step By Step</div>
+        <h2 class="title">Washing</h2>
+        <p class="section-note">Wash every 2–3 weeks, depending on how often the piece is worn and how much product builds up.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Detangle first</h3>
+              <p>Work gently from ends to roots with a wide-tooth comb before any water touches the hair.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Cleanse gently</h3>
+              <p>Submerge in lukewarm water and work through a small amount of sulfate-free shampoo — never rub, twist or scrub.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Rinse thoroughly</h3>
+              <p>Rinse in lukewarm water until it runs completely clear.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Condition mid-to-ends</h3>
+              <p>Apply from mid-length to ends, avoiding the lace. Leave for 5–10 minutes, then rinse well.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Towel dry, don't wring</h3>
+              <p>Blot gently with a soft towel to lift away excess water.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRYING & STYLING -->
+<section class="section-mist">
+  <div class="wrap">
+    <div class="split">
+      <div class="split-text">
+        <div class="eyebrow">Finishing Up</div>
+        <h2 class="title">Drying &amp; styling</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Air dry on a stand</h3>
+              <p>Place on a wig stand and let it dry away from direct sunlight.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Apply leave-in while damp</h3>
+              <p>A light serum or leave-in keeps the hair soft and moisturized as it dries.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Heat, sparingly</h3>
+              <p>Always use a heat protectant first. Keep tools on low-to-medium heat and avoid daily styling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split-media">
+        <img src="images/model-natural-black.jpeg" alt="Brunelle natural black straight lace wig">
+        <div class="frame-tag">Natural Black — Silky Straight</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DO'S & DON'TS -->
+<section class="section-dark">
+  <div class="wrap">
+    <div class="eyebrow">Know The Rules</div>
+    <h2 class="title" style="color:#fff;">Do's &amp; don'ts</h2>
+    <div class="rules-grid">
+      <div class="rules-col">
+        <h3>Do</h3>
+        <ul>
+          <li>Wash every 2–3 weeks</li>
+          <li>Store on a wig stand</li>
+          <li>Detangle before every wash</li>
+          <li>Sleep in a satin bonnet</li>
+          <li>Use sulfate-free products</li>
+        </ul>
+      </div>
+      <div class="rules-col">
+        <h3>Don't</h3>
+        <ul>
+          <li>Sleep in your wig</li>
+          <li>Use excessive heat</li>
+          <li>Rub or twist wet hair</li>
+          <li>Lend it out — oils transfer</li>
+          <li>Store it in a bag or drawer</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="eyebrow">A Note On Storage</div>
+      <p>When it's not on your head, it should be on a stand — in a cool, dry spot, out of direct sunlight. This is what keeps the shape, the shine and the lifespan intact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<div class="closing">
+  <img src="images/models-trio.png" alt="Brunelle wigs — natural, copper and honey lace fronts">
+  <div class="closing-content">
+    <h2>Your Brunelle piece is an investment. A little care keeps it looking as beautiful as the day you unboxed it.</h2>
+    <p>Questions about your piece? Reach out any time — we're always happy to help you get the most out of your Brunelle.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-word">Brunelle</div>
+    <div class="foot-tag">Made To Be Admired</div>
+    <div class="foot-copy">© Brunelle — Wig Care Guide</div>
+  </div>
+</footer>
+
+</body>
+</html>
